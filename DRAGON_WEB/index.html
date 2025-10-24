@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+     <link rel="icon" type="image/png" href="img/DRAGON.jpg">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="estilo_dragon.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <title>Guarida Dragón</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* === VIDEO DE FONDO === */
+    .video-section {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .video-section video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    /* === OVERLAY (Texto + Botones) === */
+    .overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 1;
+    }
+
+    .changing-text {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 12px rgba(0,0,0,0.8);
+      opacity: 1;
+      transition: opacity 0.6s ease;
+      min-height: 3.5rem;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .buttons button {
+      background: rgba(255,255,255,0.15);
+      border: 2px solid white;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .buttons button:hover {
+      background: white;
+      color: black;
+      transform: scale(1.05);
+    }
+
+    /* === CONTENIDO DESPUÉS DEL VIDEO === */
+    .content {
+      background: #000;
+      padding: 60px;
+      opacity: 0;
+      transform: translateY(100px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .content.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .content p {
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+<a href="https://wa.me/5214831050490?text=Hola,%20quiero%20más%20información%20sobre%20las%20Clases%20de%20Artes%20marciales%20de%20de%20Guarida%20Dragón%20por%20favor" 
+   target="_blank" 
+   class="whatsapp-float" 
+   aria-label="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+  <!-- SECCIÓN DEL VIDEO -->
+  <div class="video-section">
+      <!-- Barra Social -->
+  <div class="social-bar">
+    <a href="https://wa.me/5214831050490?text=Hola,%20quiero%20más%20información%20sobre%20los%20talleres%20de%20ELECTRÓNICA%20de%20la%20escuela%20de%20pequeños%20ingenieros%20por%20favor" target="_blank" class="whatsapp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://www.tiktok.com/@guaridadragontmz?_t=ZS-90Mq2frj9Zi&_r=1" target="_blank" class="tiktok">
+      <i class="fab fa-tiktok"></i>
+    </a>
+    <a href="https://www.facebook.com/share/1Bfd7qAJAq/" target="_blank" class="facebook">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+  </div>
+    <video autoplay muted loop playsinline>
+      <source src="C:\Users\solda\Downloads\dragon_reverso.mp4" type="video/mp4">
+      Tu navegador no soporta video en HTML5.
+    </video>
+
+    <div class="overlay">
+      <div class="changing-text" id="changingText">Guarida Dragón</div>
+<div class="buttons">
+<a href="https://maps.app.goo.gl/m3z2umxnmSGTiT1D6?g_st=aw" 
+   target="_blank" 
+   class="btn-link">
+  Encuéntranos
+</a>
+  <button onclick="scrollToSection('costos')">Costos</button>
+  <button onclick="scrollToSection('horarios')">Principiantes y adultos</button>
+</div>
+    </div>
+  </div>
+
+  <!-- CONTENIDO AL HACER SCROLL -->
+  <div class="content" id="content">
+    <center><h1>¿Qué Practicamos?</h1></center>
+    <div class="two-columns">
+    <!-- Columna Muay Thai -->
+    <div class="column">
+      <!-- Ejemplo de logo SVG (puedes cambiarlo por uno real) -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+        <circle cx="32" cy="32" r="30" stroke="white" stroke-width="4" fill="none"/>
+        <path d="M20 40 L32 20 L44 40 Z" fill="white"/>
+      </svg>
+      <h2>Muay Thai</h2>
+      <p>
+        El Muay Thai, conocido como el "arte de las ocho extremidades", es un arte marcial originario de Tailandia que utiliza puños, codos, rodillas y espinillas. 
+        Es un deporte de combate muy completo y tradicional que combina técnica, resistencia y disciplina.
+      </p>
+    </div>
+
+    <!-- Columna Kick Boxing -->
+    <div class="column">
+      <!-- Ejemplo de logo SVG (puedes cambiarlo por uno real) -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+        <rect x="12" y="12" width="40" height="40" stroke="white" stroke-width="4" fill="none"/>
+        <circle cx="32" cy="32" r="10" fill="white"/>
+      </svg>
+      <h2>Kick Boxing</h2>
+      <p>
+        El Kick Boxing es un deporte de contacto que combina técnicas de boxeo con patadas. 
+        Tiene raíces en el karate y el boxeo occidental, y se practica tanto como defensa personal 
+        como en competiciones deportivas, siendo muy popular en todo el mundo.
+      </p>
+    </div>
+  </div>
+  
+
+  </div>
+ <section class="horarios" id="horarios">
+  <h2 class="horarios__titulo">Horarios de Entrenamiento</h2>
+  <table class="tabla-horarios">
+    <thead>
+      <tr>
+        <th>Día</th>
+        <th>7:00am a 9:00am</th>
+        <th>Resto del día
+            (5 a 6 Principiantes; 6 a 7 adultos)
+        </th>
+        <th>Instructor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Lunes</td>
+        <td>Muay Thai <b>público general</b></td>
+        <td>Kick boxing</td>
+        <td>Ing. Abel García Pérez</td>
+      </tr>
+      <tr>
+        <td>Martes</td>
+        <td></td>
+        <td>Muay Thai</td>
+        <td>Ing. Abel García Pérez</td>
+      </tr>
+      <tr>
+        <td>Miércoles</td>
+        <td>Muay Thai <b>público general</b></td>
+        <td>Kick boxing</td>
+        <td>Ing. Abel García Pérez</td>
+      </tr>
+      <tr>
+        <td>Jueves</td>
+        <td></td>
+        <td>Muay Thai</td>
+        <td>Ing. Abel García Pérez</td>
+      </tr>
+      <tr>
+        <td>Viernes</td>
+        <td>Muay Thai <b>público general</b></td>
+        <td>Kick boxing</td>
+        <td>Ing. Abel García Pérez</td>
+      </tr>
+      <tr>
+        <td>Sábado</td>
+        <td></td>
+        <td>Muay Thai</td>
+        <td>Ing. Abel García Pérez</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+<main class="cards">
+  <!-- Sección 1: amarillo -->
+  <!-- Cambia data-bg por tu ruta local si quieres (ej: file:///C:/Users/solda/Downloads/tanya.webp o "tanya.webp" si está en mismo folder) -->
+  <section class="card card--yellow" data-bg="img/muay.jpg">
+    <div class="card__bg" aria-hidden="true"></div>
+
+    <div class="card__content">
+      <h2 class="card__title"><b>Muay Thai</b> </h2>
+      <span class="card__pill">Principiantes y adultos</span>
+      <p class="card__text">Ofrecemos Muay Thai para adultos y principiantes, una disciplina que combina fuerza, técnica y autocontrol. Nuestras clases están diseñadas para que los principiantes aprendan desde cero en un ambiente seguro y motivante, mientras que los adultos con más experiencia perfeccionan su técnica, mejoran su condición física y liberan estrés a través del arte marcial más completo de Tailandia.</p>
+    </div>
+  </section>
+
+  <!-- Sección 2: naranja -->
+  <section class="card card--orange" data-bg="img/mixto.webp">
+    <div class="card__bg" aria-hidden="true"></div>
+
+    <div class="card__content">
+      <h2 class="card__title">Muay Thai</h2>
+      <span class="card__pill">Público general</span>
+      <p class="card__text">Descubre el poder y la disciplina del Muay Thai, un arte marcial que combina fuerza, técnica y concentración. En nuestras clases aprenderás a dominar tu cuerpo y mente mientras mejoras tu resistencia, coordinación y confianza. No importa tu nivel de experiencia: lo importante es dar el primer paso y superarte en cada entrenamiento.</p>
+    </div>
+  </section>
+
+  <!-- Sección 3: roja -->
+  <section class="card card--red" data-bg="img/tao.jpg" >
+    <div class="card__bg" aria-hidden="true"></div>
+
+    <div class="card__content">
+      <h2 class="card__title">Kick Boxing</h2>
+      <span class="card__pill">principiantes y adultos</span>
+      <p class="card__text">Ofrecemos Kick Boxing para adultos y principiantes, una disciplina que combina potencia, agilidad y control. Nuestros entrenamientos te ayudarán a mejorar tu condición física, aprender técnicas efectivas de golpeo y liberar tensiones mientras desarrollas confianza y disciplina. Ya sea tu primera clase o busques perfeccionar tu nivel, aquí encontrarás el impulso que necesitas para superarte cada día.</p>
+    </div>
+  </section>
+</main>
+
+<section class="precios" id="costos">
+  <h2 class="precios__titulo">Planes y Costos</h2>
+
+  <div class="precios__contenedor">
+    <!-- Clase individual -->
+    <div class="precio-card" >
+      <div class="overlay"></div>
+      <div class="contenido">
+        <h3>Clase Individual</h3>
+        <p>Perfecta para quienes quieren probar o entrenar ocasionalmente.</p>
+        <div class="precio">$60 <span>por clase</span></div>
+<a href="https://wa.me/5214831050490?text=Hola,%20quiero%20más%20información%20sobre%20las%20Clases%20de%20Artes%20marciales%20de%20de%20Guarida%20Dragón%20por%20favor" 
+   target="_blank" 
+   class="btn-link">
+  Unirme Ahora
+</a>      </div>
+    </div>
+
+    <!-- Mensualidad -->
+    <div class="precio-card" id="costos" style="--bg:url('img/kickboxing_bg.jpg')">
+      <div class="overlay"></div>
+      <div class="contenido">
+        <h3>Mensualidad</h3>
+        <p>Entrena sin límites durante todo el mes. Ideal para alumnos constantes.</p>
+        <div class="precio">$600 <span>mensual</span></div>
+<a href="https://wa.me/5214831050490?text=Hola,%20quiero%20más%20información%20sobre%20las%20Clases%20de%20Artes%20marciales%20de%20de%20Guarida%20Dragón%20por%20favor" 
+   target="_blank" 
+   class="btn-link">
+  Unirme Ahora
+</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-overlay"></div>
+
+  <div class="footer-content">
+    <h2 class="footer-title">Guarida Dragón</h2>
+    <p class="footer-text">
+      Disciplina. Fortaleza. Honor.<br>
+      Entrena con nosotros y despierta tu poder interior.
+    </p>
+
+    <div class="footer-socials">
+      <a href="https://wa.me/5214831050490?text=Hola,%20quiero%20más%20información%20sobre%20las%20Clases%20de%20Artes%20marciales%20de%20de%20Guarida%20Dragón%20por%20favor" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.tiktok.com/@guaridadragontmz?_t=ZS-90Mq2frj9Zi&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.facebook.com/share/1Bfd7qAJAq/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    </div>
+
+    <p class="footer-copy">
+      © 2025 Guarida Dragón. Todos los derechos reservados.
+    </p>
+  </div>
+</footer>
+
+
+  <script>
+    function scrollToSection(id) {
+  const target = document.getElementById(id);
+  if (target) {
+    target.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+ /* Asigna los background-image desde data-bg y observa la visibilidad (scroll) */
+document.addEventListener('DOMContentLoaded', () => {
+  // asigna fondos
+  document.querySelectorAll('.card').forEach(card => {
+    const url = card.getAttribute('data-bg') || '';
+    const bg = card.querySelector('.card__bg');
+    if (bg && url) bg.style.backgroundImage = `url("${url}")`;
+  });
+
+  // IntersectionObserver: activa .in-view cuando la sección está mayormente visible
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('in-view');
+      else entry.target.classList.remove('in-view');
+    });
+  }, { threshold: 0.55 }); // ~55% visible para activar
+
+  document.querySelectorAll('.card').forEach(c => observer.observe(c));
+});
+    // Texto cambiante
+    const texts = ["Guarida Dragón", "Empiezas débil", "sigues constante", "terminas indestructible."];
+    let idx = 0;
+    const el = document.getElementById("changingText");
+
+    setInterval(() => {
+      el.style.opacity = 0;
+      setTimeout(() => {
+        idx = (idx + 1) % texts.length;
+        el.textContent = texts[idx];
+        el.style.opacity = 1;
+      }, 600);
+    }, 3000);
+
+    // Efecto scroll para mostrar el contenido
+    const content = document.getElementById("content");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > window.innerHeight / 3) {
+        content.classList.add("visible");
+      }
+    
+    });
+  </script>
+
+</body>
+</html>
